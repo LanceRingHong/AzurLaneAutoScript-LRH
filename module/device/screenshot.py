@@ -81,9 +81,15 @@ class Screenshot(Adb, WSA, DroidCast, AScreenCap, Scrcpy, NemuIpc, LDOpenGL):
                 method = self.config.Emulator_ScreenshotMethod
             method = self.screenshot_methods.get(method, self.screenshot_adb)
 
-            if self.screenshot_queue is not None and self.screenshot_queue.qsize() >= 10:
-                logger.warning('截图队列已满，跳过本次抓图以避免编码开销')
-                continue
+            if self.screenshot_queue is not None:
+                try:
+                    queue_size = self.screenshot_queue.qsize()
+                except NotImplementedError:
+                    # macOS 不支持 qsize()，此处跳过队列大小检查（或根据需求调整）
+                    queue_size = 0  # 假设队列未满
+                if queue_size >= 10:
+                    logger.warning('截图队列已满，跳过本次抓图以避免编码开销')
+                    continue
 
             self.image = method()
 
