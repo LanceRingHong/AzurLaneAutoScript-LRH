@@ -1786,6 +1786,7 @@ class AlasGUI(Frame):
             put_buttons(
                 [
                     {"label": "简体中文", "value": "zh-CN"},
+                    {"label": "HUAWEI版", "value": "zh-HW"},
                     {"label": "繁體中文", "value": "zh-TW"},
                     {"label": "English", "value": "en-US"},
                     {"label": "日本語", "value": "ja-JP"},

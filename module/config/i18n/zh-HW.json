@@ -1,0 +1,907 @@
+{
+  "Menu": {
+    "Alas": {
+      "name": "港区智慧中枢",
+      "help": ""
+    },
+    "Farm": {
+      "name": "全域作战引擎",
+      "help": ""
+    },
+    "Event": {
+      "name": "周期性业务流",
+      "help": ""
+    },
+    "EventDaily": {
+      "name": "每日高频任务",
+      "help": ""
+    },
+    "Reward": {
+      "name": "资源归集",
+      "help": ""
+    },
+    "DailyMission": {
+      "name": "常态化日常",
+      "help": ""
+    },
+    "Opsi": {
+      "name": "开放世界探索协议",
+      "help": ""
+    },
+    "Tool": {
+      "name": "生态工具箱",
+      "help": ""
+    }
+  },
+  "Task": {
+    "Alas": {
+      "name": "中枢参数调优",
+      "help": ""
+    },
+    "General": {
+      "name": "全局底层配置",
+      "help": ""
+    },
+    "Restart": {
+      "name": "故障自愈与热重载",
+      "help": ""
+    },
+    "Main": {
+      "name": "主线攻坚方案",
+      "help": ""
+    },
+    "Main2": {
+      "name": "主线攻坚方案 II",
+      "help": ""
+    },
+    "Main3": {
+      "name": "主线攻坚方案 III",
+      "help": ""
+    },
+    "GemsFarming": {
+      "name": "晶体结构深度挖掘",
+      "help": ""
+    },
+    "EventGeneral": {
+      "name": "活动通用底层",
+      "help": ""
+    },
+    "Event": {
+      "name": "活动作战流 A",
+      "help": ""
+    },
+    "Event2": {
+      "name": "活动作战流 B",
+      "help": ""
+    },
+    "Raid": {
+      "name": "分布式共斗协议",
+      "help": ""
+    },
+    "Hospital": {
+      "name": "深谷通讯链路",
+      "help": ""
+    },
+    "Coalition": {
+      "name": "联合演训矩阵",
+      "help": ""
+    },
+    "MaritimeEscort": {
+      "name": "商路护航保障",
+      "help": ""
+    },
+    "EventShop": {
+      "name": "物资交换节点",
+      "help": ""
+    },
+    "WarArchives": {
+      "name": "历史档案回溯",
+      "help": "由于历史数据接口缺乏维护，自动开荒协议可能存在兼容性波动。如遇异常阻断，建议人工介入完成初始化，随后接管自律寻敌系统。"
+    },
+    "EventA": {
+      "name": "周期作业 A区",
+      "help": ""
+    },
+    "EventB": {
+      "name": "周期作业 B区",
+      "help": ""
+    },
+    "EventC": {
+      "name": "周期作业 C区",
+      "help": ""
+    },
+    "EventD": {
+      "name": "周期作业 D区",
+      "help": ""
+    },
+    "EventSp": {
+      "name": "高优特勤作业 SP",
+      "help": ""
+    },
+    "RaidDaily": {
+      "name": "常态化共斗流",
+      "help": ""
+    },
+    "CoalitionSp": {
+      "name": "特别寻踪行动 SP",
+      "help": ""
+    },
+    "Commission": {
+      "name": "远洋委托调度",
+      "help": ""
+    },
+    "Tactical": {
+      "name": "战术赋能中心",
+      "help": ""
+    },
+    "Research": {
+      "name": "尖端科研矩阵",
+      "help": ""
+    },
+    "Dorm": {
+      "name": "全场景生活空间",
+      "help": ""
+    },
+    "Meowfficer": {
+      "name": "生物辅助终端",
+      "help": ""
+    },
+    "Guild": {
+      "name": "大舰队互联生态",
+      "help": ""
+    },
+    "Reward": {
+      "name": "全链路资源回收",
+      "help": ""
+    },
+    "Awaken": {
+      "name": "心智认知觉醒",
+      "help": ""
+    },
+    "Daily": {
+      "name": "高频日常挑战",
+      "help": ""
+    },
+    "Hard": {
+      "name": "高难攻坚模式",
+      "help": ""
+    },
+    "Exercise": {
+      "name": "模拟演训对抗",
+      "help": ""
+    },
+    "ShopFrequent": {
+      "name": "核心供应链",
+      "help": ""
+    },
+    "ShopOnce": {
+      "name": "次级供应链",
+      "help": ""
+    },
+    "Shipyard": {
+      "name": "舰船建造工坊",
+      "help": ""
+    },
+    "Gacha": {
+      "name": "量子构建 (抽卡)",
+      "help": ""
+    },
+    "Freebies": {
+      "name": "福利自动感知",
+      "help": ""
+    },
+    "Minigame": {
+      "name": "轻量化娱乐组件",
+      "help": "基于资源溢出感知算法：当游戏币未达存储阈值时自动采集；当资源充沛且奖励未饱和时，智能接管小游戏进程。"
+    },
+    "PrivateQuarters": {
+      "name": "生活空间交互计划",
+      "help": ""
+    },
+    "OpsiGeneral": {
+      "name": "大世界通用底层",
+      "help": ""
+    },
+    "OpsiAshBeacon": {
+      "name": "META 协同作战",
+      "help": ""
+    },
+    "OpsiAshAssist": {
+      "name": "META 分布式支援",
+      "help": ""
+    },
+    "OpsiExplore": {
+      "name": "月度全域开荒",
+      "help": ""
+    },
+    "OpsiShop": {
+      "name": "港区物资枢纽",
+      "help": ""
+    },
+    "OpsiVoucher": {
+      "name": "票据兑换中心",
+      "help": ""
+    },
+    "OpsiDaily": {
+      "name": "大世界常态业务",
+      "help": ""
+    },
+    "OpsiObscure": {
+      "name": "隐秘海域探测",
+      "help": ""
+    },
+    "OpsiAbyssal": {
+      "name": "深渊高危作业",
+      "help": ""
+    },
+    "OpsiArchive": {
+      "name": "档案坐标解析",
+      "help": "调用白票供应链自动解析档案坐标并执行。该区域基于零能耗技术（不消耗行动力）。\n前置环境要求：\n- 大世界主线全链路贯通 + 模拟战/试验场闭环\n- 激活开荒任务流或部署战役信息记录仪（5000油组件）"
+    },
+    "OpsiStronghold": {
+      "name": "要塞攻坚战",
+      "help": ""
+    },
+    "OpsiMonthBoss": {
+      "name": "月度旗舰决战",
+      "help": ""
+    },
+    "OpsiMeowfficerFarming": {
+      "name": "短猫任务流转",
+      "help": ""
+    },
+    "OpsiHazard1Leveling": {
+      "name": "侵蚀1 极致练级",
+      "help": ""
+    },
+    "OpsiCrossMonth": {
+      "name": "跨月无缝衔接",
+      "help": "    基于毫秒级时间同步，Alas将在重置前10分钟介入，通过驻留进程实现跨月无缝流转。自动完成跨周期的高价值任务链（每日/隐秘/深渊/短猫）以最大化金菜产出。\n    核心提示：系统执行跨月驻留协议期间，请勿进行人工干预，以免破坏进程保活。"
+    },
+    "Daemon": {
+      "name": "半自动辅助驾驶",
+      "help": ""
+    },
+    "OpsiDaemon": {
+      "name": "大世界辅助驾驶",
+      "help": ""
+    },
+    "EventStory": {
+      "name": "剧情速通模块",
+      "help": ""
+    },
+    "Benchmark": {
+      "name": "算力性能评测",
+      "help": ""
+    },
+    "AzurLaneUncensored": {
+      "name": "视觉体验增强",
+      "help": ""
+    },
+    "GameManager": {
+      "name": "应用生命周期管理 (Beta)",
+      "help": ""
+    },
+    "VLMGameController": {
+      "name": "VLM 多模态智能终端",
+      "help": "搭载次世代视觉语言大模型（AI Vision），通过端云协同自动研判游戏卡死与未知UI界面，重构故障恢复逻辑。需部署对应的Python算力库并配置API密钥。"
+    }
+  },
+  "Oil": {
+    "_info": {
+      "name": "能源感知组件",
+      "help": ""
+    },
+    "Value": {
+      "name": "当前储能",
+      "help": ""
+    },
+    "Limit": {
+      "name": "储能阈值",
+      "help": ""
+    },
+    "Color": {
+      "name": "视觉识别色域",
+      "help": ""
+    },
+    "Record": {
+      "name": "历史能耗记录",
+      "help": ""
+    }
+  },
+  "ActionPoint": {
+    "_info": {
+      "name": "行动力引擎",
+      "help": ""
+    },
+    "Value": {
+      "name": "动能储备",
+      "help": ""
+    },
+    "Total": {
+      "name": "总动能容量",
+      "help": ""
+    },
+    "Color": {
+      "name": "识别特征色",
+      "help": ""
+    },
+    "Record": {
+      "name": "动能波动日志",
+      "help": ""
+    }
+  },
+  "Scheduler": {
+    "_info": {
+      "name": "全局任务调度器",
+      "help": ""
+    },
+    "Enable": {
+      "name": "激活该业务流",
+      "help": "将此任务接入中央调度系统。\n注：委托、科研、收获等基础服务已固化为常驻进程，强制开启。",
+      "True": "已激活",
+      "False": "未激活"
+    },
+    "NextRun": {
+      "name": "智能规划时间",
+      "help": "基于算法自动研判的执行时间点。清除数据将触发即时响应。"
+    },
+    "Command": {
+      "name": "内核任务标识",
+      "help": ""
+    },
+    "SuccessInterval": {
+      "name": "成功后冷却周期 (Min)",
+      "help": ""
+    },
+    "FailureInterval": {
+      "name": "异常后重试周期 (Min)",
+      "help": ""
+    },
+    "ServerUpdate": {
+      "name": "服务器刷新锚点",
+      "help": "任务完成闭环后，自动挂起至服务器刷新时间点。\n支持全时区自动换算，无需人工干预。"
+    }
+  },
+  "Emulator": {
+    "_info": {
+      "name": "虚拟化终端配置",
+      "help": ""
+    },
+    "Serial": {
+      "name": "终端通讯标识 (Serial)",
+      "help": "支持主流模拟器协议的自动发现与连接。\n填入 \"auto\" 启用智能设备嗅探，多实例场景下建议手动指定地址以确保连接稳定性。\n\n标准终端协议列表：\n- 蓝叠 (Bluestacks): 127.0.0.1:5555\n- 蓝叠Hyper-V架构: 填 \"bluestacks4-hyperv\" 激活自动握手\n- 夜神 (Nox): 127.0.0.1:62001\n- MuMu深度适配版: 127.0.0.1:7555\n- 雷电 (LDPlayer): emulator-5554 或端口 5555\n多开场景请通过 console.bat 调用 `adb devices` 获取真实设备指纹。"
+    },
+    "PackageName": {
+      "name": "应用包名映射",
+      "help": "当终端存在多应用实例时，需明确指定目标服务。",
+      "auto": "智能识别",
+      "com.bilibili.azurlane": "国服 (CN)",
+      "com.YoStarEN.AzurLane": "国际服 (EN)",
+      "com.YoStarJP.AzurLane": "日服 (JP)",
+      "com.hkmanjuu.azurlane.gp": "台服 (TW)",
+      "com.bilibili.blhx.huawei": "国服 华为渠道版 (尊贵体验)",
+      "com.bilibili.blhx.honor": "国服 荣耀渠道版"
+    },
+    "ServerName": {
+      "name": "逻辑服务器节点",
+      "help": "绑定游戏内服务器以激活“实时状态监测”功能。\n当感知到服务器维护或网络波动时，自动挂起进程直至链路恢复。",
+      "disabled": "禁用监测模块"
+    },
+    "ScreenshotMethod": {
+      "name": "视觉感知方案",
+      "help": "启用自动选择时，将通过基准测试自动切换至极速渲染模式。\n性能梯队: DroidCast_raw (遥遥领先) >> aScreenCap_nc > ADB_nc >>> aScreenCap > uiautomator2 ~= ADB\n建议运行“生态工具箱 - 性能评测”以寻找最佳适配方案。",
+      "auto": "AI 智能选择",
+      "ADB": "ADB 基础传输",
+      "DroidCast_raw": "DroidCast 原始流 (极速)"
+    },
+    "ControlMethod": {
+      "name": "触控指令映射方案",
+      "help": "响应速度: minitouch (毫秒级) > Hermit >>> uiautomator2 ~= ADB\n推荐使用 minitouch 以获得极致跟手体验。",
+      "ADB": "ADB 指令",
+      "minitouch": "Minitouch 直通",
+      "MaaTouch": "MaaTouch 触控"
+    },
+    "ScreenshotDedithering": {
+      "name": "画面去抖动算法",
+      "help": "针对移动端真机屏幕的色彩优化开关"
+    },
+    "AdbRestart": {
+      "name": "ADB 服务自愈机制",
+      "help": "当设备连接丢失时尝试重启 ADB 桥接服务"
+    }
+  },
+  "Error": {
+    "_info": {
+      "name": "调试与异常捕获",
+      "help": ""
+    },
+    "HandleError": {
+      "name": "启用异常熔断机制",
+      "help": "智能处理部分运行时异常，遇到严重错误自动执行战术撤退"
+    },
+    "SaveError": {
+      "name": "黑匣子记录 (Log/截图)",
+      "help": "保留故障现场数据"
+    },
+    "OnePushConfig": {
+      "name": "全场景消息推送",
+      "help": "触发不可逆异常时，通过 Onepush 中台分发告警信息。配置指南：https://..."
+    }
+  },
+  "Optimization": {
+    "_info": {
+      "name": "性能调优与体验",
+      "help": ""
+    },
+    "ScreenshotInterval": {
+      "name": "视觉采样间隔 (秒)",
+      "help": "定义两次视觉感知之间的最小时间片，建议值 0.1~0.3，有效降低高算力设备负载"
+    },
+    "CombatScreenshotInterval": {
+      "name": "战斗场景采样降频",
+      "help": "战斗状态下的视觉采样间隔 (0.3~1.0)，平衡战斗帧率与CPU功耗"
+    },
+    "TaskHoardingDuration": {
+      "name": "任务批处理队列 (分钟)",
+      "help": "启用任务囤积策略，减少碎片化操作。\n触发后等待 X 分钟，进行批量化集中处理，提升收菜效率。"
+    },
+    "WhenTaskQueueEmpty": {
+      "name": "空闲状态策略",
+      "help": "任务队列清空后的系统行为，深度优化待机功耗。",
+      "stay_there": "保持当前状态",
+      "goto_main": "返回主交互界面",
+      "close_game": "释放游戏进程"
+    }
+  },
+  "DropRecord": {
+    "_info": {
+      "name": "数据资产记录",
+      "help": ""
+    },
+    "AzurStatsID": {
+      "name": "AzurStat 身份标识",
+      "help": "上传至云端统计平台时的客户端指纹\n由随机哈希字符组成，支持用户自定义"
+    },
+    "API": {
+      "name": "数据上行链路",
+      "help": "如遇网络连通性问题，可切换至国内反向代理节点",
+      "default": "默认线路 (Cloudflare)",
+      "cn_gz_reverse_proxy": "国内加速链路 (广州)"
+    },
+    "CombatRecord": {
+      "name": "战斗掉落视觉归档",
+      "help": "启用后将延长结算界面的停留时间以进行精准截图\n注意：自律寻敌模式下该策略不生效",
+      "do_not": "不操作",
+      "save": "本地归档"
+    }
+  },
+  "YukikazeTaskManager": {
+    "_info": {
+      "name": "智慧任务编排中枢",
+      "help": "核心任务的优先级调度与动态资源分配逻辑。"
+    },
+    "TaskPriorityAdjustment": {
+      "name": "任务优先级拓扑图",
+      "help": "定义全场景业务流的执行权重 (Restart > Opsi > ...)"
+    }
+  },
+  "Campaign": {
+    "_info": {
+      "name": "战役参数配置",
+      "help": ""
+    },
+    "Name": {
+      "name": "作战目标标识",
+      "help": "支持输入如 7-2, 12-4, D3, SP4 等战役代码\n智能解析：输入 7-2-3 可激活 7-2 三战撤退策略"
+    },
+    "Event": {
+      "name": "活动映射表",
+      "help": "自动锚定最新活动周期",
+      "campaign_main": "主线战役",
+      "event_20251218_cn": "响彻于天穹之音 (2025)",
+      "war_archives_...": "历史档案库..."
+    },
+    "Mode": {
+      "name": "战役难度分级",
+      "help": "仅适用于主线地图",
+      "normal": "标准模式",
+      "hard": "困难模式"
+    },
+    "UseClearMode": {
+      "name": "启用周回自律协议",
+      "help": ""
+    },
+    "UseAutoSearch": {
+      "name": "启用自律寻敌算法",
+      "help": ""
+    },
+    "Use2xBook": {
+      "name": "高效作战指令书",
+      "help": "双倍燃油消耗，双倍产出结算，效率翻倍"
+    }
+  },
+  "StopCondition": {
+    "_info": {
+      "name": "任务熔断条件",
+      "help": "触发任意预设条件，立即终止当前业务流"
+    },
+    "OilLimit": {
+      "name": "低油量保护机制",
+      "help": "石油低于阈值时触发任务挂起，待资源补足后自动恢复"
+    },
+    "RunCount": {
+      "name": "循环次数限制",
+      "help": "设定最大执行次数，倒序计数，归零即止\n0 为无限循环模式"
+    },
+    "MapAchievement": {
+      "name": "成就达成自动停止",
+      "help": "基于地图进度的智能判断：100%探索、三星达成或安全海域认证",
+      "non_stop": "持续运行",
+      "threat_safe": "全指标达成 (100% + 三星 + 安全海域)"
+    },
+    "StageIncrease": {
+      "name": "自适应开荒推进",
+      "help": "开启后激活自动推进逻辑，达成当前关卡目标后自动前往下一关卡。\n前置条件：舰队练度达标且满足海域属性限制。\n支持全系图谱：1-1至15-4，A/B/C/D图，SP图等。"
+    }
+  },
+  "Fleet": {
+    "_info": {
+      "name": "舰队编组配置",
+      "help": ""
+    },
+    "Fleet1Formation": {
+      "name": "一队战术阵型",
+      "help": "",
+      "line_ahead": "单纵突击",
+      "double_line": "复纵防御",
+      "diamond": "轮形防空"
+    },
+    "Fleet1Mode": {
+      "name": "一队作战模态",
+      "help": "",
+      "combat_auto": "全自动自律",
+      "combat_manual": "手动操作接管",
+      "stand_still_in_the_middle": "中场静态部署"
+    },
+    "FleetOrder": {
+      "name": "双舰队协同策略",
+      "help": "定义两支舰队的职能分配与切换逻辑\n非自律模式下智能拾取物资；4战及以下场景强制执行单队清全图策略",
+      "fleet1_mob_fleet2_boss": "一队道中 / 二队决战",
+      "fleet1_boss_fleet2_mob": "一队决战 / 二队道中",
+      "fleet1_all_fleet2_standby": "一队全权负责 / 二队待机"
+    }
+  },
+  "Submarine": {
+    "_info": {
+      "name": "潜艇作战配置",
+      "help": ""
+    },
+    "Mode": {
+      "name": "潜艇支援方案",
+      "help": "非自律寻敌模式下的潜艇调用逻辑。\n注意：'狩猎及决战' 模式为复合策略，将在道中进行游猎并在BOSS战发起总攻。",
+      "hunt_and_boss": "全场景支援 (狩猎+决战)"
+    },
+    "DistanceToBoss": {
+      "name": "潜艇机动部署逻辑",
+      "help": "BOSS战前潜艇的机动位置选择\n基于曼哈顿距离算法计算位移，选择'远洋支援'需配备具备该技能的舰船(U522/达芬奇)",
+      "use_open_ocean_support": "启用远洋打击支援"
+    }
+  },
+  "Emotion": {
+    "_info": {
+      "name": "心情值监控体系",
+      "help": ""
+    },
+    "Mode": {
+      "name": "心情管理策略",
+      "help": "",
+      "calculate": "精准计算心情消耗",
+      "ignore": "强制执行 (无视红脸告警)",
+      "calculate_ignore": "记录消耗但强制执行"
+    },
+    "Fleet1Control": {
+      "name": "一队心情阈值控制",
+      "help": "",
+      "keep_exp_bonus": "维持经验加成态 (>120)",
+      "prevent_green_face": "绿脸保护线 (>40)",
+      "prevent_red_face": "红脸熔断线 (>0)"
+    }
+  },
+  "HpControl": {
+    "_info": {
+      "name": "生存能力管理",
+      "help": "仅在禁用阵容锁定时生效"
+    },
+    "UseHpBalance": {
+      "name": "启用血量动态平衡",
+      "help": "智能调度：将低血量单位转移至保护位，高血量单位前置承伤"
+    },
+    "UseEmergencyRepair": {
+      "name": "使用损管工具",
+      "help": ""
+    },
+    "HpBalanceWeight": {
+      "name": "先锋承伤权重矩阵",
+      "help": "针对不同肉度先锋的算法微调，格式：1000, 1000, 1000"
+    }
+  },
+  "EnemyPriority": {
+    "_info": {
+      "name": "智能索敌算法",
+      "help": "自定义敌方目标的打击优先级逻辑"
+    },
+    "EnemyScaleBalanceWeight": {
+      "name": "目标优先权策略",
+      "help": "基于路径规划算法，优先清理通往BOSS路径上的障碍，再根据权重清理其他目标",
+      "default_mode": "依据地图元数据",
+      "S3_enemy_first": "大型目标优先 (高收益)",
+      "S1_enemy_first": "小型目标优先 (快速清理)"
+    }
+  },
+  "GemsFarming": {
+    "_info": {
+      "name": "晶体结构深度挖掘",
+      "help": "高能预警：本功能仅提供微量钻石产出，非高效获取途径。\n建议：仅供阵容成型的资深指挥官使用，将钻石视为副产物，切勿迷信低耗而忽视角色养成。\n\n核心逻辑：\n- 旗舰等级>=32 触发自动轮换机制\n- 基于 NGA 算法模型优化委托收益 (A3 > A1 > 2-4 > 2-1)\n- 一队承担全部战斗负荷，二队提供跨维支援"
+    },
+    "ChangeFlagship": {
+      "name": "旗舰智能轮换",
+      "help": "当旗舰触达等级上限(32)或心情红线时，自动从船坞检索符合条件的低耗航母(Lv 1-31)进行接替。\n系统将自动迁移旗舰装备，实现无缝战力继承。",
+      "ship_equip": "深度轮换 (舰船+装备)"
+    },
+    "EquipmentCode": {
+      "name": "装备代码映射",
+      "help": "定义换装时的标准装备配置码。\n蓝叠模拟器用户需激活虚拟键盘映射以支持代码注入。"
+    }
+  },
+  "EventGeneral": {
+    "_info": {
+      "name": "活动通用底层",
+      "help": ""
+    },
+    "PtLimit": {
+      "name": "活动 PT 熔断阈值",
+      "help": "当累计 PT 触达设定值时，自动阻断所有活动任务。开启后实现“目标导向”的自动化管理。"
+    },
+    "TimeLimit": {
+      "name": "时间窗口限制",
+      "help": "设定任务截止时间戳，超时自动终止。防止活动结束后产生无效指令。"
+    }
+  },
+  "TaskBalancer": {
+    "_info": {
+      "name": "资源动态平衡器",
+      "help": "防止单一任务导致物资枯竭"
+    },
+    "Enable": {
+      "name": "启用平衡算法",
+      "help": "每次出击后执行物资校验"
+    },
+    "TaskCall": {
+      "name": "物资匮乏时回调任务",
+      "help": "触发低资源保护时，自动跳转至指定任务模块 (如主线图) 获取资源"
+    }
+  },
+  "Research": {
+    "_info": {
+      "name": "尖端科研矩阵",
+      "help": "基于多因子过滤算法，Alas 将寻找同时满足所有约束条件的科研项目。\n实现了逻辑解耦：修改资源消耗开关无需调整复杂的过滤器字符串。"
+    },
+    "UseCube": {
+      "name": "魔方投入策略",
+      "help": "",
+      "always_use": "无限制投入",
+      "only_05_hour": "仅在 0.5h 且无其他项目时投入",
+      "do_not_use": "禁止投入"
+    },
+    "AllowDelay": {
+      "name": "资源不足挂起机制",
+      "help": "资源匮乏时智能推迟科研任务，而非终止队列，确保科研流水线永不亦停。"
+    },
+    "PresetFilter": {
+      "name": "智能科研过滤器",
+      "help": "建议使用预置的优化算法。科研产出大数据支持：https://azur-stats.lyoko.io/",
+      "series_8_blueprint_305": "八期科研 蓝图+305 混合策略",
+      "series_2_than_3_457_234": "二期/三期 跨代兼顾 (457+234)"
+    }
+  },
+  "GuildOperation": {
+    "_info": {
+      "name": "大舰队联合作战",
+      "help": ""
+    },
+    "SelectNewOperation": {
+      "name": "自动发起新战役",
+      "help": "权限校验：需具备舰队司令或副司令权限。\n默认策略：自动锚定奖励最优的“达古康纳尔岛海空战”。"
+    },
+    "JoinThreshold": {
+      "name": "参战进度阈值",
+      "help": "0.0 ~ 1.0。智能判定加入时机，例如 '0.5' 表示仅在进度未过半时介入。"
+    }
+  },
+  "GeneralShop": {
+    "_info": {
+      "name": "核心军需供应链",
+      "help": ""
+    },
+    "ConsumeCoins": {
+      "name": "溢出物资自动熔断",
+      "help": "当物资储备超过 550,000 时，自动触发扫货逻辑，将溢出资源转化为资产。"
+    }
+  },
+  "OpsiGeneral": {
+    "_info": {
+      "name": "大世界通用配置",
+      "help": "所有大世界业务流共享的底层参数"
+    },
+    "UseLogger": {
+      "name": "启用全域坐标记录仪",
+      "help": "进入仓库时自动激活所有坐标记录设备，扩展探测视野"
+    },
+    "BuyActionPointLimit": {
+      "name": "行动力补给策略",
+      "help": "定义行动力购买的频次上限",
+      "5": "5次 (10000油 -> 1000行动力 满载)"
+    },
+    "DoRandomMapEvent": {
+      "name": "地图随机事件响应",
+      "help": "自律寻敌结束后执行二次扫描：覆盖明石商店、塞壬信息收集、探测装置激活及双舰队机关解锁。"
+    }
+  },
+  "OpsiAshBeacon": {
+    "_info": {
+      "name": "META 协同作战",
+      "help": ""
+    },
+    "OneHitMode": {
+      "name": "一击脱离战术",
+      "help": "对每个信标执行单次打击，随后转入每30分钟的支援呼叫模式 (档案信标除外)"
+    },
+    "EnsureFullyCollected": {
+      "name": "全量数据采集保障",
+      "help": "强制收集满每日 200 信标数据。未达标前，系统将暂时忽略行动力保留设置 (需配合短猫任务流)。"
+    }
+  },
+  "OpsiExplore": {
+    "_info": {
+      "name": "月度全域开荒",
+      "help": "每月初执行大世界全图谱点亮。基于 27分钟 间隔的智能冷却算法，确保空域搜索效率最大化。\n硬性门槛：大世界主线通关 + 模拟战/试验场完备。"
+    },
+    "SpecialRadar": {
+      "name": "战役记录仪已部署",
+      "help": "检测是否已购入 5000油 道具"
+    }
+  },
+  "OpsiScheduling": {
+    "_info": {
+      "name": "全场景资源智慧调度引擎 Pro",
+      "help": "基于多维状态感知算法，打破「侵蚀」与「短猫」之间的业务壁垒。\n系统将根据黄币储备与行动力数值，进行底层逻辑研判，实现任务流的无缝协同与全链路信息同步。"
+    },
+    "EnableSmartScheduling": {
+      "name": "开启智慧决策",
+      "help": "搭载新一代智能任务流转技术，系统将全天候接管资源管理，为您带来极致流畅的自动化体验：\n• 动态资源平衡：监测到黄币匮乏且行动力充沛时，智能流转至短猫任务，最大化资源产出效率；\n• 智能低耗待机：双资源处于低位运行时，自动进入1小时休眠队列并触发即时通知，减少无效空转；\n• 业务无缝回退：短猫任务行动力耗尽时，自动回切至侵蚀作战，确保持续产出；\n• 阈值安全熔断：侵蚀行动力触达最低保留红线时，触发智能暂停与告警推送；\n• 全局状态感知：关键数值跨越阈值时，实时同步状态信息，一切尽在掌握。"
+    },
+    "ActionPointNotifyLevels": {
+      "name": "关键态势感知阈值",
+      "help": "基于分布式消息总线，精准捕捉行动力波动。当数值触达预设锚点时，即时触发多终端弹窗提醒。\n• 配置规范：支持多级自定义阈值（如：500,1000,2000,3000），构建全粒度感知网。\n• 生态联动说明：该功能需配合「Alas-错误处理」中的通知服务模块，实现软硬协同的完整体验。"
+    }
+  },
+  "Daemon": {
+    "_info": {
+      "name": "半自动辅助驾驶",
+      "help": "针对未适配关卡的智能辅助系统。\nAlas 将接管战斗准备、结算交互、剧情跳过、自动退役及弹窗拦截。指挥官仅需专注于核心战术——选择敌人。"
+    },
+    "EnterMap": {
+      "name": "进图准备自动交互",
+      "help": "使用前请确保出击编队已就绪"
+    }
+  },
+  "Benchmark": {
+    "_info": {
+      "name": "算力性能评测",
+      "help": "基准测试套件：评估不同截图与控制方案的响应延迟。\n系统将根据您的硬件环境（模拟器/PC配置）推荐最优解，极致释放性能。"
+    },
+    "DeviceType": {
+      "name": "终端形态",
+      "help": "",
+      "emulator": "通用模拟器",
+      "plone_cloud_with_adb": "云手机 (公网ADB链路)",
+      "android_phone": "物理安卓终端"
+    }
+  },
+  "Gui": {
+    "Aside": {
+      "Install": "部署",
+      "Home": "驾驶舱",
+      "Develop": "极客模式",
+      "Performance": "性能监控",
+      "Setting": "全局参数",
+      "AddAlas": "新建实例"
+    },
+    "Button": {
+      "Start": "一键启动",
+      "Stop": "终止进程",
+      "ScrollON": "智能滚动 [ON]",
+      "ScrollOFF": "智能滚动 [OFF]",
+      "DashboardON": "折叠面板",
+      "DashboardOFF": "展开面板",
+      "ClearLog": "清空日志流",
+      "Setting": "参数配置",
+      "CheckUpdate": "检查固件更新",
+      "ClickToUpdate": "执行升级",
+      "RetryUpdate": "重试升级链路",
+      "CancelUpdate": "取消升级"
+    },
+    "Toast": {
+      "DisableTranslateMode": "点击关闭实时翻译",
+      "ConfigSaved": "配置参数已持久化",
+      "AlasIsRunning": "调度核心正在运行中",
+      "ClickToUpdate": "检测到新版本，即刻体验！"
+    },
+    "Status": {
+      "Running": "正在执行业务流",
+      "Inactive": "系统待机中",
+      "Warning": "异常阻断",
+      "Updating": "固件升级中"
+    },
+    "Overview": {
+      "Scheduler": "调度视图",
+      "Dashboard": "数据仪表盘",
+      "Log": "运行日志",
+      "Running": "运行态",
+      "Pending": "排队中",
+      "Waiting": "等待态",
+      "NoTask": "空闲",
+      "PlaceholderSwitched": "壁纸流转完成"
+    },
+    "Dashboard": {
+      "TimeError": "时钟同步异常",
+      "JustNow": "刚刚",
+      "SecondsAgo": "秒前",
+      "Oil": "石油储量",
+      "Coin": "物资资产",
+      "Gem": "钻石储备",
+      "ActionPoint": "大世界动能",
+      "YellowCoin": "压制凭证 (黄币)",
+      "PurpleCoin": "特装凭证 (紫币)"
+    },
+    "AddAlas": {
+      "PopupTitle": "新建配置实例",
+      "NewName": "实例标识符",
+      "CopyFrom": "克隆自现有配置",
+      "Confirm": "确认创建",
+      "FileExist": "实例名称冲突，请重命名",
+      "Manage": "实例管理"
+    },
+    "AppManage": {
+      "PageTitle": "多实例管理中心",
+      "TitleNew": "新建配置",
+      "Import": "导入配置",
+      "Export": "导出配置",
+      "Delete": "销毁实例",
+      "OverrideWarning": "操作将覆盖现有配置，是否继续？"
+    },
+    "Update": {
+      "UpToDate": "当前已是最新旗舰版本",
+      "HaveUpdate": "发现新版本，建议立即升级",
+      "UpdateStart": "启动升级程序",
+      "UpdateWait": "等待业务流闭环...",
+      "UpdateRun": "核心组件升级中",
+      "UpdateSuccess": "升级成功，正在执行热重启",
+      "UpdateFailed": "升级受阻，请查阅日志流",
+      "UpdateChecking": "云端版本校验中",
+      "Local": "本地版本",
+      "Upstream": "上游仓库",
+      "Author": "贡献者",
+      "DetailedHistory": "查看详细变更日志"
+    },
+    "Remote": {
+      "Running": "远程服务在线",
+      "NotRunning": "服务离线 (连接中断)",
+      "NotEnable": "未激活远程控制模块",
+      "EntryPoint": "远程访问入口:",
+      "ConfigureHint": "配置指引:",
+      "SSHNotInstall": "系统缺失 SSH 组件，请安装以激活完整功能"
+    }
+  }
+}
