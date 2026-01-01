@@ -9,6 +9,7 @@ import requests
 import threading
 import time
 import re
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from pathlib import Path
 from functools import partial
@@ -104,6 +105,8 @@ from module.webui.widgets import (
 patch_executor()
 patch_mimetype()
 task_handler = TaskHandler()
+# Thread pool executor for async network requests
+_network_executor = ThreadPoolExecutor(max_workers=2, thread_name_prefix="alas-network")
 
 
 def timedelta_to_text(delta=None):
@@ -2252,26 +2255,31 @@ class AlasGUI(Frame):
         # Announcement check function - fetches from API and pushes to frontend
         self._last_announcement_id = None
         def check_and_push_announcement():
-            try:
-                # Add timestamp to bypass cache
-                timestamp = int(time.time())
-                resp = requests.get(
-                    f'https://alascloudapi.nanoda.work/api/get/announcement?t={timestamp}',
-                    timeout=10
-                )
-                if resp.status_code == 200:
-                    data = resp.json()
-                    if data and data.get('announcementId') and data.get('title') and data.get('content'):
-                        announcement_id = data['announcementId']
-                        # Only push if ID is different from the last one or not pushed yet
-                        if announcement_id != self._last_announcement_id:
-                            title_json = json.dumps(data['title'])
-                            content_json = json.dumps(data['content'])
-                            announcement_id_json = json.dumps(announcement_id)
-                            run_js(f"window.alasShowAnnouncement({title_json}, {content_json}, {announcement_id_json});")
-                            self._last_announcement_id = announcement_id
-            except Exception as e:
-                logger.debug(f"Announcement check failed: {e}")
+            """Check for announcements asynchronously to avoid blocking GUI."""
+            def _fetch_announcement():
+                try:
+                    # Add timestamp to bypass cache
+                    timestamp = int(time.time())
+                    resp = requests.get(
+                        f'https://alascloudapi.nanoda.work/api/get/announcement?t={timestamp}',
+                        timeout=10
+                    )
+                    if resp.status_code == 200:
+                        data = resp.json()
+                        if data and data.get('announcementId') and data.get('title') and data.get('content'):
+                            announcement_id = data['announcementId']
+                            # Only push if ID is different from the last one or not pushed yet
+                            if announcement_id != self._last_announcement_id:
+                                title_json = json.dumps(data['title'])
+                                content_json = json.dumps(data['content'])
+                                announcement_id_json = json.dumps(announcement_id)
+                                run_js(f"window.alasShowAnnouncement({title_json}, {content_json}, {announcement_id_json});")
+                                self._last_announcement_id = announcement_id
+                except Exception as e:
+                    logger.debug(f"Announcement check failed: {e}")
+            
+            # Submit to thread pool to avoid blocking GUI
+            _network_executor.submit(_fetch_announcement)
 
         # Periodic announcement check generator
         def announcement_checker():
