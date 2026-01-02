@@ -889,6 +889,9 @@ OpsiHazard1Leveling:
   YellowCoinPreserve: 100000
   SirenResearch_Enable: false
   SirenBug_Enable: false
+  SirenBug_Type:
+    value: dangerous
+    option: [dangerous, safe]
   SirenBug_Zone: 0
   MinimumActionPointReserve: 200
   ExecuteFixedPatrolScan: false

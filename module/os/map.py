@@ -1308,6 +1308,10 @@ class OSMap(OSFleet, Map, GlobeCamera, StrategicSearchHandler):
                 keys='OpsiHazard1Leveling.OpsiHazard1Leveling.SirenBug_Zone',
                 default=0
             )
+            siren_bug_type = self.config.cross_get(
+                keys='OpsiHazard1Leveling.OpsiHazard1Leveling.SirenBug_Type',
+                default='dangerous'
+            )
         except Exception as e:
             logger.warning(f'读取SirenBug配置失败: {e}，跳过塞壬研究装置BUG利用')
             return
@@ -1343,7 +1347,7 @@ class OSMap(OSFleet, Map, GlobeCamera, StrategicSearchHandler):
             # 跳转至指定高侵蚀区域
             with self.config.temporary(STORY_ALLOW_SKIP=False):
                 self.os_map_goto_globe(unpin=False)
-                self.globe_goto(target_zone, types=('DANGEROUS',), refresh=True)
+                self.globe_goto(target_zone, types=(siren_bug_type.upper(),), refresh=True)
                 self.zone_init()
                 self.map_init(map_=None)
                 camera_queue = self.map.camera_data
@@ -1374,7 +1378,7 @@ class OSMap(OSFleet, Map, GlobeCamera, StrategicSearchHandler):
 
                         # 移动舰队至塞壬研究装置，触发剧情
                         self.device.click(grid)
-                        time.sleep(10)
+                        time.sleep(1)
                         #result = self.wait_until_walk_stable(drop=drop, walk_out_of_step=False, confirm_timer=Timer(1.5, count=4))
                         #if 'event' in result:
                         with self.config.temporary(STORY_ALLOW_SKIP=False):
@@ -1384,11 +1388,11 @@ class OSMap(OSFleet, Map, GlobeCamera, StrategicSearchHandler):
                             if self._select_story_option_by_index(target_index=1, options_count=3):      
                                 self._click_story_confirm_button()
                             # 第2个选项
-                            time.sleep(1)
+                            time.sleep(0.8)
                             if self._select_story_option_by_index(target_index=1, options_count=3):      
                                 self._click_story_confirm_button()
                             # 第3个选项
-                            time.sleep(1)
+                            time.sleep(0.8)
                             if self._select_story_option_by_index(target_index=2, options_count=3):      
                                 self._click_story_confirm_button()
 
