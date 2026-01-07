@@ -728,6 +728,8 @@ class OperationSiren(OSMap):
                 search_completed = False
                 try:
                     search_completed = self.run_strategic_search()
+                except TaskEnd:
+                    raise
                 except Exception as e:
                     logger.warning(f'Strategic search exception: {e}')
 
