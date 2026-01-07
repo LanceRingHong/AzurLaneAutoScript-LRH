@@ -1062,14 +1062,15 @@ class OSMap(OSFleet, Map, GlobeCamera, StorageHandler, StrategicSearchHandler):
         self.handle_ash_beacon_attack()
 
         logger.hr('Run strategy search', level=2)
-        self.os_auto_search_run(strategic=True)
+        try:
+            self.os_auto_search_run(strategic=True)
+        except Exception as e:
+            logger.warning(f'Strategic search interrupted: {e}')
 
         self.hp_reset()
         self.hp_get()
-        self._solved_map_event = set()
-        self._solved_fleet_mechanism = False
-        self.clear_question()
-        self.map_rescan()
+        # 注意：clear_question 和 map_rescan 由调用方 os_hazard1_leveling 控制
+        # 以便在舰队移动后可以再次执行重扫
 
     def map_rescan_current(self, drop=None):
         """
