@@ -13,6 +13,7 @@ import inflection
 from cached_property import cached_property
 
 from module.base.decorator import del_cached_property
+from module.base.api_client import ApiClient
 from module.config.config import AzurLaneConfig, TaskEnd
 from module.config.deep import deep_get, deep_set
 from module.exception import *
@@ -262,6 +263,7 @@ class AzurLaneAutoScript:
     def restart(self):
         from module.handler.login import LoginHandler
         LoginHandler(self.config, device=self.device).app_restart()
+        self.config.task_delay(server_update=True)
 
     def start(self):
         from module.handler.login import LoginHandler

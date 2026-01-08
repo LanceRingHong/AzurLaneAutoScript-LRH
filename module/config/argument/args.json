@@ -10358,7 +10358,7 @@
       },
       "AkashiShopFilter": {
         "type": "textarea",
-        "value": "ActionPoint > PurpleCoins"
+        "value": "ActionPoint"
       }
     },
     "Storage": {
@@ -11237,10 +11237,6 @@
         "type": "input",
         "value": 100000
       },
-      "DoScanningDevice": {
-        "type": "checkbox",
-        "value": false
-      },
       "MinimumActionPointReserve": {
         "type": "input",
         "value": 200
@@ -11251,7 +11247,7 @@
       },
       "Cl1Filter": {
         "type": "textarea",
-        "value": "ActionPoint > PurpleCoins"
+        "value": "ActionPoint"
       }
     },
     "OpsiSirenBug": {

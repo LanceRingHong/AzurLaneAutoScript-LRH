@@ -1931,7 +1931,7 @@
       "UseRepairPack": false,
       "RepairPackThreshold": 0.9,
       "DoRandomMapEvent": true,
-      "AkashiShopFilter": "ActionPoint > PurpleCoins"
+      "AkashiShopFilter": "ActionPoint"
     },
     "Storage": {
       "Storage": {}
@@ -2189,10 +2189,9 @@
     "OpsiHazard1Leveling": {
       "TargetZone": 0,
       "OperationCoinsPreserve": 100000,
-      "DoScanningDevice": false,
       "MinimumActionPointReserve": 200,
       "ExecuteFixedPatrolScan": false,
-      "Cl1Filter": "ActionPoint > PurpleCoins"
+      "Cl1Filter": "ActionPoint"
     },
     "OpsiSirenBug": {
       "SirenResearch_Enable": false,

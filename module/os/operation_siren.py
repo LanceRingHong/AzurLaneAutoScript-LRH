@@ -355,7 +355,11 @@ class OperationSiren(OSMap):
                     logger.hr(f'OS meowfficer farming, zone_id={zone.zone_id}', level=1)
                     self.globe_goto(zone, types='SAFE', refresh=True)
                     self.fleet_set(self.config.OpsiFleet_Fleet)
-                    self.run_strategic_search()
+                    if self.run_strategic_search():
+                        self._solved_map_event = set()
+                        self._solved_fleet_mechanism = False
+                        self.clear_question()
+                        self.map_rescan()
                     self.handle_after_auto_search()
             else:
                 zones = self.zone_select(hazard_level=OpsiMeowfficerFarming_HazardLevel) \
@@ -688,7 +692,11 @@ class OperationSiren(OSMap):
                     logger.hr(f'OS meowfficer farming, zone_id={zone.zone_id}', level=1)
                     self.globe_goto(zone, types='SAFE', refresh=True)
                     self.fleet_set(self.config.OpsiFleet_Fleet)
-                    self.run_strategic_search()
+                    if self.run_strategic_search():
+                        self._solved_map_event = set()
+                        self._solved_fleet_mechanism = False
+                        self.clear_question()
+                        self.map_rescan()
                     self.handle_after_auto_search()
                     self.config.check_task_switch()
                 continue
@@ -717,10 +725,19 @@ class OperationSiren(OSMap):
                 self.action_point_set(cost=120, keep_current_ap=keep_current_ap, check_rest_ap=True)
                 self.fleet_set(self.config.OpsiFleet_Fleet)
                 self.os_order_execute(recon_scan=False, submarine_call=self.config.OpsiFleet_Submarine)
+                search_completed = False
                 try:
-                    self.run_strategic_search()
+                    search_completed = self.run_strategic_search()
+                except TaskEnd:
+                    raise
                 except Exception as e:
                     logger.warning(f'Strategic search exception: {e}')
+
+                if search_completed:
+                    self._solved_map_event = set()
+                    self._solved_fleet_mechanism = False
+                    self.clear_question()
+                    self.map_rescan()
 
                 try:
                     self.handle_after_auto_search()
@@ -865,13 +882,26 @@ class OperationSiren(OSMap):
             if self.zone.zone_id != zone or not self.is_zone_name_hidden:
                 self.globe_goto(self.name_to_zone(zone), types='SAFE', refresh=True)
             self.fleet_set(self.config.OpsiFleet_Fleet)
-            self.run_strategic_search()
+            search_completed = self.run_strategic_search()
 
-            if self.config.OpsiHazard1Leveling_ExecuteFixedPatrolScan:
-                exec_fixed = getattr(self.config, 'OpsiHazard1Leveling_ExecuteFixedPatrolScan', False)
-                if exec_fixed:
-                    self._execute_fixed_patrol_scan(ExecuteFixedPatrolScan=True)
+            # 只有战略搜索正常完成时才执行重扫（被中断时不执行）
+            if search_completed:
+                # ===== 第一次重扫：战略搜索后的完整镜头重扫 =====
+                self._solved_map_event = set()
+                self._solved_fleet_mechanism = False
+                self.clear_question()
+                self.map_rescan()
 
+                # ===== 舰队移动搜索（如果启用且没有发现事件）=====
+                if self.config.OpsiHazard1Leveling_ExecuteFixedPatrolScan:
+                    exec_fixed = getattr(self.config, 'OpsiHazard1Leveling_ExecuteFixedPatrolScan', False)
+                    # 只有在第一次重扫没有发现事件时才执行舰队移动
+                    if exec_fixed and not self._solved_map_event:
+                        self._execute_fixed_patrol_scan(ExecuteFixedPatrolScan=True)
+                        # ===== 第二次重扫：舰队移动后再次重扫 =====
+                        self._solved_map_event = set()
+                        self.clear_question()
+                        self.map_rescan()
 
             self.handle_after_auto_search()
             solved_events = getattr(self, '_solved_map_event', set())
@@ -927,7 +957,7 @@ class OperationSiren(OSMap):
 
         logger.attr('Fleet to check', self.config.OpsiFleet_Fleet)
         self.fleet_set(self.config.OpsiFleet_Fleet)
-        self.ship_info_enter(FLEET_FLAGSHIP)
+        self.equip_enter(FLEET_FLAGSHIP)
         all_full_exp = True
         
         # 收集所有舰船数据
@@ -951,7 +981,7 @@ class OperationSiren(OSMap):
             if total_exp < LIST_SHIP_EXP[target_level - 1]:
                 all_full_exp = False
             
-            if not self.ship_view_next():
+            if not self.equip_view_next():
                 break
             position += 1
 
