@@ -3736,6 +3736,10 @@
     "AkashiShopFilter": {
       "name": "明石商店過濾器",
       "help": "一般不需要修改，只買行動力和紫幣即可"
+    },
+    "NotifyOpsiMail": {
+      "name": "OpsiGeneral.NotifyOpsiMail.name",
+      "help": "OpsiGeneral.NotifyOpsiMail.help"
     }
   },
   "OpsiAshBeacon": {

@@ -10359,6 +10359,10 @@
       "AkashiShopFilter": {
         "type": "textarea",
         "value": "ActionPoint"
+      },
+      "NotifyOpsiMail": {
+        "type": "checkbox",
+        "value": true
       }
     },
     "Storage": {
