@@ -11395,6 +11395,10 @@
         "type": "input",
         "value": "500,1000,2000,3000",
         "valuetype": "str"
+      },
+      "OperationCoinsReturnThreshold": {
+        "type": "input",
+        "value": 30000
       }
     },
     "Storage": {
