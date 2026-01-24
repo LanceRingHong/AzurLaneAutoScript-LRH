@@ -23,6 +23,10 @@ class CoinTaskMixin:
     # All coin supplement tasks in fixed order
     ALL_COIN_TASKS = ['OpsiObscure', 'OpsiAbyssal', 'OpsiStronghold', 'OpsiMeowfficerFarming']
     
+    # Configuration paths (shared constants to avoid hardcoding)
+    CONFIG_PATH_CL1_PRESERVE = 'OpsiHazard1Leveling.OpsiHazard1Leveling.OperationCoinsPreserve'
+    CONFIG_PATH_RETURN_THRESHOLD = 'OpsiHazard1Leveling.OpsiScheduling.OperationCoinsReturnThreshold'
+    
     def notify_push(self, title, content):
         """
         Send push notification (smart scheduling feature).
@@ -120,20 +124,27 @@ class CoinTaskMixin:
         
         # Get and cache CL1 preserve value
         cl1_preserve = self.config.cross_get(
-            keys='OpsiHazard1Leveling.OpsiHazard1Leveling.OperationCoinsPreserve',
+            keys=self.CONFIG_PATH_CL1_PRESERVE,
             default=100000
         )
         
         # Get OperationCoinsReturnThreshold from OpsiScheduling config
         # Try direct access first (if config is bound), then fallback to cross_get
+        # Also fallback if the value is None (to handle cases where attribute exists but is None)
+        return_threshold_config = None
         if hasattr(self.config, 'OpsiScheduling_OperationCoinsReturnThreshold'):
-            return_threshold_config = self.config.OpsiScheduling_OperationCoinsReturnThreshold
-        else:
-            # Fallback: use cross_get with correct path (OpsiScheduling is under OpsiHazard1Leveling)
+            attr_value = self.config.OpsiScheduling_OperationCoinsReturnThreshold
+            # If attribute exists and has a valid value (not None), use it
+            # Otherwise, fallback to cross_get to try reading from config file
+            if attr_value is not None:
+                return_threshold_config = attr_value
+        
+        # Fallback: use cross_get if direct access didn't yield a valid value
+        if return_threshold_config is None:
             return_threshold_config = self.config.cross_get(
-                keys='OpsiHazard1Leveling.OpsiScheduling.OperationCoinsReturnThreshold',
+                keys=self.CONFIG_PATH_RETURN_THRESHOLD,
                 default=None
-            )
+        )
         
         # If value is 0, disable yellow coin check
         if return_threshold_config == 0:
@@ -283,7 +294,7 @@ class CoinTaskMixin:
         if self.is_cl1_enabled and self.config.OpsiScheduling_EnableSmartScheduling:
             yellow_coins = self.get_yellow_coins()
             cl1_preserve = self.config.cross_get(
-                keys='OpsiHazard1Leveling.OpsiHazard1Leveling.OperationCoinsPreserve',
+                keys=self.CONFIG_PATH_CL1_PRESERVE,
                 default=100000
             )
             if yellow_coins < cl1_preserve:
