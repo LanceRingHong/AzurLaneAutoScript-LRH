@@ -3170,21 +3170,23 @@
         "type": "state",
         "value": "campaign_main",
         "option": [
+          "raid_20240328",
           "raid_20250116"
         ],
         "option_cn": [
-          "raid_20250116"
+          "raid_20240328"
         ],
         "option_en": [
-          "raid_20250116"
+          "raid_20240328"
         ],
         "option_jp": [
-          "raid_20250116"
+          "raid_20240328"
         ],
         "option_tw": [
           "raid_20250116"
         ],
         "option_bold": [
+          "raid_20240328",
           "raid_20250116"
         ]
       },
@@ -6986,21 +6988,23 @@
         "type": "state",
         "value": "campaign_main",
         "option": [
+          "raid_20240328",
           "raid_20250116"
         ],
         "option_cn": [
-          "raid_20250116"
+          "raid_20240328"
         ],
         "option_en": [
-          "raid_20250116"
+          "raid_20240328"
         ],
         "option_jp": [
-          "raid_20250116"
+          "raid_20240328"
         ],
         "option_tw": [
           "raid_20250116"
         ],
         "option_bold": [
+          "raid_20240328",
           "raid_20250116"
         ]
       },
@@ -11416,23 +11420,20 @@
       },
       "Command": {
         "type": "input",
-        "value": "OpsiScheduling",
-        "display": "hide"
+        "value": "500,1000,2000,3000",
+        "valuetype": "str"
       },
-      "SuccessInterval": {
+      "OperationCoinsReturnThreshold": {
         "type": "input",
-        "value": 0,
-        "display": "hide"
+        "value": 30000
       },
-      "FailureInterval": {
-        "type": "input",
-        "value": 120,
-        "display": "hide"
-      },
-      "ServerUpdate": {
-        "type": "input",
-        "value": "00:00",
-        "display": "hide"
+      "OperationCoinsReturnThresholdApplyToAllCoinTasks": {
+        "type": "checkbox",
+        "value": true,
+        "option": [
+          true,
+          false
+        ]
       }
     },
     "Storage": {

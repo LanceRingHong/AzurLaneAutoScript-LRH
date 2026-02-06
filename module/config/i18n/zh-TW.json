@@ -4169,6 +4169,26 @@
       "name": "IslandSeasonTask._info.name",
       "help": "IslandSeasonTask._info.help"
     },
+    "ActionPointNotifyLevels": {
+      "name": "OpsiScheduling.ActionPointNotifyLevels.name",
+      "help": "OpsiScheduling.ActionPointNotifyLevels.help"
+    },
+    "OperationCoinsReturnThreshold": {
+      "name": "OpsiScheduling.OperationCoinsReturnThreshold.name",
+      "help": "OpsiScheduling.OperationCoinsReturnThreshold.help"
+    },
+    "OperationCoinsReturnThresholdApplyToAllCoinTasks": {
+      "name": "OpsiScheduling.OperationCoinsReturnThresholdApplyToAllCoinTasks.name",
+      "help": "OpsiScheduling.OperationCoinsReturnThresholdApplyToAllCoinTasks.help",
+      "True": "True",
+      "False": "False"
+    }
+  },
+  "IslandSeasonTask": {
+    "_info": {
+      "name": "IslandSeasonTask._info.name",
+      "help": "IslandSeasonTask._info.help"
+    },
     "TaskDict": {
       "name": "IslandSeasonTask.TaskDict.name",
       "help": "IslandSeasonTask.TaskDict.help"
