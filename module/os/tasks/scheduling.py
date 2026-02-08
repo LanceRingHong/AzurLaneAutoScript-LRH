@@ -212,6 +212,7 @@ class CoinTaskMixin:
             keys=self.CONFIG_PATH_USE_SMART_CL1_PRESERVE
         )
         
+        if not use_smart_preserve:
             # 开关未开启，回退到侵蚀1原配置
             cl1_preserve_original = self.config.cross_get(
                 keys=self.CONFIG_PATH_CL1_PRESERVE
