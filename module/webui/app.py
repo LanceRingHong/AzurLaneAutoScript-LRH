@@ -102,6 +102,7 @@ from module.webui.widgets import (
     put_none,
     put_output,
 )
+from module.base.device_id import get_device_id
 
 patch_executor()
 patch_mimetype()
@@ -688,6 +689,23 @@ class AlasGUI(Frame):
             for output in output_list:
                 output.show()
 
+            # 在掉落记录组中显示可复制的设备ID
+            if group_name == "DropRecord":
+                device_id = get_device_id()
+                put_html(
+                    f'<div style="display:grid; margin:.125rem 0;">'
+                    f'<span style="font-size:1rem; font-weight:500; margin:0 .25rem;">设备ID (Device ID)</span>'
+                    f'<input type="text" value="{device_id}" readonly '
+                    f'style="font-family:monospace; font-size:0.9rem; padding:0.25rem 0.5rem; '
+                    f'margin-top:0.25rem; border:1px solid #ccc; border-radius:4px; '
+                    f'background:transparent; cursor:pointer; width:100%;" '
+                    f'onclick="this.select(); document.execCommand(\'copy\'); '
+                    f'this.style.borderColor=\'#28a745\'; '
+                    f'setTimeout(()=>this.style.borderColor=\'#ccc\', 1000);" '
+                    f'title="点击复制">'
+                    f'</div>'
+                )
+
         return len(output_list)
 
     @use_scope("navigator")
@@ -795,7 +813,7 @@ class AlasGUI(Frame):
                         put_scope("dashboard"),
                     ],
                 ),
-            put_scope("log", [put_html("")])
+            put_scope("log", [put_html("")]).style(f"--device-id: '{get_device_id()}';")
 
         log.console.width = log.get_width()
 
