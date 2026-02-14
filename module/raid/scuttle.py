@@ -63,6 +63,10 @@ class RaidScuttleCombat(RaidCombat):
 
 class RaidScuttleRun(RaidRun, RaidScuttleCombat, Dock):
     @property
+    def manual_mode(self):
+        return self.config.Fleet_Fleet1Mode
+
+    @property
     def change_vanguard(self):
         return 'vanguard' in self.config.RaidScuttle_Sacrifice
 
@@ -111,6 +115,42 @@ class RaidScuttleRun(RaidRun, RaidScuttleCombat, Dock):
             # End
             if self.appear_then_click(RAID_FLEET_PREPARATION, offset=(20, 20), interval=5):
                 break
+
+    def combat_auto_reset(self):
+        pass
+
+    def raid_execute_once(self, mode, raid):
+        """
+        Args:
+            mode:
+            raid:
+
+        Returns:
+            in: page_raid
+            out: page_raid
+        """
+        logger.hr('Raid Execute')
+        self.config.override(
+            Campaign_Name=f'{raid}_{mode}',
+            Campaign_UseAutoSearch=False,
+            Fleet_FleetOrder='fleet1_all_fleet2_standby'
+        )
+
+        if mode == 'ex':
+            backup = self.config.temporary(
+                Submarine_Fleet=1,
+                Submarine_Mode='every_combat'
+            )
+
+        self.emotion.check_reduce(1)
+
+        self.raid_enter(mode=mode, raid=raid)
+        self.combat(balance_hp=False, auto_mode=self.manual_mode, expected_end=self.raid_expected_end)
+
+        if mode == 'ex':
+            backup.recover()
+
+        logger.hr('Raid End')
 
     def get_common_rarity_ship(self, index='all'):
         self.dock_favourite_set(False, wait_loading=False)

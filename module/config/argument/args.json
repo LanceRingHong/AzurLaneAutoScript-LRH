@@ -3092,13 +3092,13 @@
       },
       "Fleet1Mode": {
         "type": "select",
-        "value": "combat_auto",
+        "value": "combat_manual",
         "option": [
-          "combat_auto",
           "combat_manual",
           "stand_still_in_the_middle",
           "hide_in_bottom_left"
-        ]
+        ],
+        "display": "display"
       },
       "Fleet1Step": {
         "type": "select",
