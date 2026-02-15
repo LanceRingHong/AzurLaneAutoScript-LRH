@@ -163,6 +163,7 @@ class AlasGUI(Frame):
         self.inst_cache = []
         self.load_home = False
         self.af_flag = False
+        self._last_announcement_id = None
 
 
     @use_scope("aside", clear=True)
@@ -1236,6 +1237,12 @@ class AlasGUI(Frame):
         ).style(f"--menu-Remote--")
 
         put_button(
+            label=t("Gui.MenuDevelop.Announcement"),
+            onclick=lambda: self.ui_check_announcement(force=True),
+            color="menu",
+        ).style(f"--menu-Announcement--")
+
+        put_button(
             label=t("Gui.MenuDevelop.Utils"),
             onclick=self.dev_utils,
             color="menu",
@@ -1664,6 +1671,54 @@ class AlasGUI(Frame):
                 onclick=_disable,
             )
 
+    def ui_check_announcement(self, force=False) -> None:
+        """
+        Check for announcements and push to frontend.
+        Args:
+            force (bool): If True, show announcement even if already shown.
+        """
+        logger.info(f"Start checking announcement (force={force})...")
+        try:
+            from module.base.api_client import ApiClient
+            data = ApiClient.get_announcement(timeout=10)
+
+            if data:
+                announcement_id = data.get('announcementId')
+                
+                # If force is False, check if we need to update
+                if not force:
+                    if announcement_id and announcement_id == self._last_announcement_id:
+                        return
+
+                    # Check if browser has seen it (only if not forced)
+                    try:
+                        announcement_id_json = json.dumps(announcement_id)
+                        has_shown = eval_js(f"window.alasHasBeenShown({announcement_id_json})")
+                        if has_shown:
+                            self._last_announcement_id = announcement_id
+                            return
+                    except Exception:
+                        pass
+
+                title_json = json.dumps(data.get('title', ''))
+                content_json = json.dumps(data.get('content', ''))
+                announcement_id_json = json.dumps(announcement_id)
+                url_json = json.dumps(data.get('url', ''))
+                force_json = "true" if force else "false"
+
+                logger.info(f"Pushing announcement: {data.get('title')}")
+                run_js(f"window.alasShowAnnouncement({title_json}, {content_json}, {announcement_id_json}, {url_json}, {force_json});")
+
+                self._last_announcement_id = announcement_id
+
+            elif force:
+                toast("暂无公告 / No announcement", color="info")
+
+        except Exception as e:
+            logger.error(f"Announcement check failed: {e}")
+            if force:
+                toast(f"Check failed: {e}", color="error")
+
     def run(self) -> None:
         # setup gui
         set_env(title="Alas", output_animation=False)
@@ -1872,8 +1927,8 @@ class AlasGUI(Frame):
                 return shown.indexOf(announcementId) !== -1;
             };
 
-            window.alasShowAnnouncement = function(title, content, announcementId, url) {
-                if (window.alasHasBeenShown(announcementId) || document.getElementById('alas-announcement-modal')) {
+            window.alasShowAnnouncement = function(title, content, announcementId, url, force) {
+                if ((!force && window.alasHasBeenShown(announcementId)) || document.getElementById('alas-announcement-modal')) {
                     return;
                 }
 
@@ -2050,59 +2105,17 @@ class AlasGUI(Frame):
         self.task_handler.add(update_switch.g(), 1)
         
         # 公告检查功能
-        self._last_announcement_id = None
-        
-        def check_and_push_announcement():
-            """检查公告并推送到前端"""
-            logger.info("开始检查公告...")  # DEBUG
-            try:
-                from module.base.api_client import ApiClient
-                data = ApiClient.get_announcement(timeout=10)
-                logger.info(f"API返回数据: {bool(data)}") # DEBUG
-                
-                if data:
-                    announcement_id = data.get('announcementId')
-                    logger.info(f"公告ID: {announcement_id}, 上次ID: {self._last_announcement_id}") # DEBUG
-                    
-                    # 只有当ID不同时才推送
-                    if announcement_id and announcement_id != self._last_announcement_id:
-                        # 检查浏览器是否已看过
-                        try:
-                            announcement_id_json = json.dumps(announcement_id)
-                            has_shown = eval_js(f"window.alasHasBeenShown({announcement_id_json})")
-                            logger.info(f"浏览器是否已看过: {has_shown}") # DEBUG
-                            if has_shown:
-                                self._last_announcement_id = announcement_id
-                                return
-                        except Exception as e:
-                            logger.error(f"JS检查失败: {e}") # DEBUG
-                            pass
-
-                        title_json = json.dumps(data.get('title', ''))
-                        content_json = json.dumps(data.get('content', ''))
-                        announcement_id_json = json.dumps(announcement_id)
-                        url_json = json.dumps(data.get('url', ''))
-                        
-                        logger.info(f"准备推送公告: {data.get('title')}") # DEBUG
-                        run_js(f"window.alasShowAnnouncement({title_json}, {content_json}, {announcement_id_json}, {url_json});")
-                        self._last_announcement_id = announcement_id
-            except Exception as e:
-                logger.error(f"公告检查异常: {e}")
-                import traceback
-                traceback.print_exc()
-
-        # 定期公告检查生成器
         def announcement_checker():
             logger.info("公告检查任务启动") # DEBUG
             th = yield  # 获取任务处理器引用
             # 首次检查
-            check_and_push_announcement()
+            self.ui_check_announcement(force=False)
             # 设置后续检查间隔为30秒
             th._task.delay = 30
             yield
             while True:
                 logger.info("执行定期公告检查") # DEBUG
-                check_and_push_announcement()
+                self.ui_check_announcement(force=False)
                 yield
 
         # 添加公告检查任务（初始延迟5秒）
