@@ -131,14 +131,9 @@ def update_deploy_auto_update():
         logger.warning(f'Failed to update AutoUpdate: {e}')
 
 
-
-
 if __name__ == "__main__":
     # 自动启用 AutoUpdate 配置
     update_deploy_auto_update()
-
-    # 触发 CL1 数据库初始化及自动迁移
-    from module.statistics.cl1_database import db
     
     # 核心修复：强制设置multiprocessing启动方式为spawn（解决macOS fork导致的Mach端口崩溃）
     try:
