@@ -649,11 +649,23 @@ pre.rich-traceback-code {
 }
 
 /* Watermark for Device ID */
-#pywebio-scope-log {
+
+/* Watermark for Device ID */
+#pywebio-scope-log-container {
     position: relative;
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
 }
 
-#pywebio-scope-log::before {
+#pywebio-scope-log {
+    position: relative;
+    overflow-y: auto;
+    height: 100%;
+    flex: 1;
+}
+
+#pywebio-scope-log-container::before {
     content: var(--version);
     position: absolute;
     bottom: 1.4rem;
@@ -669,7 +681,7 @@ pre.rich-traceback-code {
     line-height: 1;
 }
 
-#pywebio-scope-log::after {
+#pywebio-scope-log-container::after {
     content: var(--device-id);
     position: absolute;
     bottom: 4px;

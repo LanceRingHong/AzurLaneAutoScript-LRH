@@ -816,7 +816,9 @@ class AlasGUI(Frame):
             # version
             local_commit = updater.get_commit(short_sha1=True)
             version = local_commit[0] if local_commit and local_commit[0] else "Unknown"
-            put_scope("log", [put_html("")]).style(f"--device-id: '{get_device_id()}'; --version: 'Ver.{version}';")
+            put_scope("log-container", [
+                put_scope("log", [put_html("")])
+            ]).style(f"--device-id: '{get_device_id()}'; --version: 'Ver.{version}';")
 
         log.console.width = log.get_width()
 
