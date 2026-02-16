@@ -435,7 +435,7 @@ ADDING = ''.join([chr(int(f)) for f in ManualConfig.OS_EXPLORE_CENTER.split('>')
 
 class OutputConfig(Output, ManualConfig):
     def __init__(self, spec=None, on_embed=None):
-        if 'content' in spec:
+        if spec and 'content' in spec:
             content = spec['content']
             if ADDING not in content and (
                     content.startswith(chr(10) or content.endswith(chr(10)))

@@ -1,10 +1,19 @@
 from module.base.decorator import cached_property
+from module.campaign.assets import CHAPTER_NEXT, CHAPTER_PREV
 from module.campaign.campaign_base import CampaignBase
-from module.campaign.assets import *
 from module.campaign.run import CampaignRun
 from module.combat.assets import BATTLE_PREPARATION
 from module.combat.emotion import Emotion
-from module.equipment.assets import *
+from module.equipment.assets import (
+    EMPTY_SHIP_R,
+    FLEET_DETAIL, FLEET_DETAIL_CHECK, FLEET_DETAIL_ENTER, FLEET_DETAIL_ENTER_FLAGSHIP,
+    FLEET_DETAIL_ENTER_FLAGSHIP_HARD_1, FLEET_DETAIL_ENTER_FLAGSHIP_HARD_2,
+    FLEET_DETAIL_ENTER_HARD_1, FLEET_DETAIL_ENTER_HARD_2,
+    FLEET_ENTER, FLEET_ENTER_FLAGSHIP,
+    FLEET_ENTER_FLAGSHIP_HARD_1, FLEET_ENTER_FLAGSHIP_HARD_2,
+    FLEET_ENTER_HARD_1, FLEET_ENTER_HARD_2,
+    FLEET_NEXT, FLEET_PREV
+)
 from module.equipment.equipment_code import EquipmentCodeHandler
 from module.equipment.fleet_equipment import FleetEquipment, OCR_FLEET_INDEX
 from module.exception import CampaignEnd, ScriptError, RequestHumanTakeover

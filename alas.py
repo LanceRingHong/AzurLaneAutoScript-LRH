@@ -36,11 +36,6 @@ class AzurLaneAutoScript:
         # Key: str, task name, value: int, failure count
         self.failure_record = {}
 
-    def three_oil_low_cost(self):
-        from module.campaign.gems_farming import GemsFarming
-        GemsFarming(config=self.config, device=self.device).run(
-            name=self.config.Campaign_Name, folder=self.config.Campaign_Event, mode=self.config.Campaign_Mode)
-
     @cached_property
     def config(self):
         try:

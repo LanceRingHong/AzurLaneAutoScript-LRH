@@ -68,7 +68,7 @@
     },
     "ThreeOilLowCost": {
       "name": "三油低耗",
-      "help": ""
+      "help": "使用三油低耗阵容进行战斗，在旗舰达到32级时自动更换旗舰并退役。"
     },
     "EventGeneral": {
       "name": "活动通用",
@@ -4319,18 +4319,18 @@
   },
   "ThreeOilLowCost": {
     "_info": {
-      "name": "ThreeOilLowCost._info.name",
-      "help": "ThreeOilLowCost._info.help"
+      "name": "三油低耗设置",
+      "help": "使用三油低耗阵容进行战斗，在旗舰达到32级时自动更换旗舰并退役。"
     },
     "ChangeFlagship": {
-      "name": "ThreeOilLowCost.ChangeFlagship.name",
-      "help": "ThreeOilLowCost.ChangeFlagship.help",
+      "name": "更换旗舰",
+      "help": "当旗舰等级>=32或心情值过低时更换旗舰。",
       "ship": "ship",
       "ship_equip": "ship_equip"
     },
     "CommonCV": {
-      "name": "ThreeOilLowCost.CommonCV.name",
-      "help": "ThreeOilLowCost.CommonCV.help",
+      "name": "指定旗舰航母",
+      "help": "",
       "custom": "custom",
       "any": "any",
       "eagle": "eagle",
@@ -4340,19 +4340,19 @@
       "hermes": "hermes"
     },
     "CommonCVFilter": {
-      "name": "ThreeOilLowCost.CommonCVFilter.name",
-      "help": "ThreeOilLowCost.CommonCVFilter.help"
+      "name": "自定义旗舰航母过滤器",
+      "help": "使用自定义过滤器需将 \"指定旗舰航母\" 设置为 \"custom\"。"
     },
     "ChangeVanguard": {
-      "name": "ThreeOilLowCost.ChangeVanguard.name",
-      "help": "ThreeOilLowCost.ChangeVanguard.help",
+      "name": "更换前排",
+      "help": "当前排心情值过低时更换前排，选择不更换则会强制低心情出击。",
       "disabled": "disabled",
       "ship": "ship",
       "ship_equip": "ship_equip"
     },
     "CommonDD": {
-      "name": "ThreeOilLowCost.CommonDD.name",
-      "help": "ThreeOilLowCost.CommonDD.help",
+      "name": "指定前排",
+      "help": "",
       "custom": "custom",
       "any": "any",
       "favourite": "favourite",
@@ -4362,28 +4362,28 @@
       "DDG": "DDG"
     },
     "CommonDDFilter": {
-      "name": "ThreeOilLowCost.CommonDDFilter.name",
-      "help": "ThreeOilLowCost.CommonDDFilter.help"
+      "name": "自定义前排过滤器",
+      "help": "使用自定义过滤器需将 \"指定前排\" 设置为 \"custom\"。"
     },
     "EquipmentCode": {
-      "name": "ThreeOilLowCost.EquipmentCode.name",
-      "help": "ThreeOilLowCost.EquipmentCode.help"
+      "name": "装备码",
+      "help": "仅当选择“更换舰船 + 装备”时生效。"
     },
     "ALLowHighFlagshipLevel": {
-      "name": "ThreeOilLowCost.ALLowHighFlagshipLevel.name",
-      "help": "ThreeOilLowCost.ALLowHighFlagshipLevel.help"
+      "name": "仅更换满级后排",
+      "help": "打开后，更换旗舰时仅会选择100级的白皮轻航。"
     },
     "ALLowLowVanguardLevel": {
-      "name": "ThreeOilLowCost.ALLowLowVanguardLevel.name",
-      "help": "ThreeOilLowCost.ALLowLowVanguardLevel.help"
+      "name": "可更换低等级前排",
+      "help": "打开后，前排等级限制改为30级以上。"
     },
     "DelayTaskIFNoFlagship": {
-      "name": "ThreeOilLowCost.DelayTaskIFNoFlagship.name",
-      "help": "ThreeOilLowCost.DelayTaskIFNoFlagship.help"
+      "name": "没有可更换的旗舰时推迟任务",
+      "help": "更换旗舰时，若找不到满足条件的白皮航母，则推迟任务。"
     },
     "CommissionLimit": {
-      "name": "ThreeOilLowCost.CommissionLimit.name",
-      "help": "ThreeOilLowCost.CommissionLimit.help"
+      "name": "防止紧急委托数量过多",
+      "help": "在7x24运行时防止紧急委托数量过多做不完每日委托。"
     }
   },
   "Storage": {
