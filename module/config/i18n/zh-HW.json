@@ -66,6 +66,10 @@
       "name": "晶体结构深度挖掘",
       "help": ""
     },
+    "ThreeOilLowCost": {
+      "name": "Task.ThreeOilLowCost.name",
+      "help": "Task.ThreeOilLowCost.help"
+    },
     "EventGeneral": {
       "name": "活动通用底层",
       "help": ""
@@ -102,10 +106,6 @@
       "name": "历史档案回溯",
       "help": "由于历史数据接口缺乏维护，自动开荒协议可能存在兼容性波动。如遇异常阻断，建议人工介入完成初始化，随后接管自律寻敌系统。"
     },
-    "CoalitionSp": {
-      "name": "特别寻踪行动 SP",
-      "help": ""
-    },
     "EventA": {
       "name": "周期作业 A区",
       "help": ""
@@ -128,6 +128,10 @@
     },
     "RaidDaily": {
       "name": "常态化共斗流",
+      "help": ""
+    },
+    "CoalitionSp": {
+      "name": "特别寻踪行动 SP",
       "help": ""
     },
     "Commission": {
@@ -406,6 +410,7 @@
       "cn_android-25": "[国服] 水仙行动",
       "cn_android-26": "[国服] 冬月计划",
       "cn_android-27": "[国服] 长弓计划",
+      "cn_android-28": "[国服] 裁决协议",
       "cn_ios-0": "[国服] 夏威夷",
       "cn_ios-1": "[国服] 珊瑚海",
       "cn_ios-2": "[国服] 中途岛",
@@ -825,6 +830,7 @@
       "raid_20240130": "Spring Festive Fiasco",
       "raid_20240328": "From Zero to Hero Rerun",
       "raid_20250116": "Spring Fashion Festa",
+      "raid_20260212": "Spring Auction Adventure",
       "war_archives_20180607_cn": "archives Ink Stained Steel Sakura",
       "war_archives_20180726_cn": "archives Iris of Light and Dark",
       "war_archives_20181020_en": "archives Strive Wish and Strategize",
@@ -4309,6 +4315,75 @@
     "AutoRestart": {
       "name": "GameManager.AutoRestart.name",
       "help": "GameManager.AutoRestart.help"
+    }
+  },
+  "ThreeOilLowCost": {
+    "_info": {
+      "name": "ThreeOilLowCost._info.name",
+      "help": "ThreeOilLowCost._info.help"
+    },
+    "ChangeFlagship": {
+      "name": "ThreeOilLowCost.ChangeFlagship.name",
+      "help": "ThreeOilLowCost.ChangeFlagship.help",
+      "ship": "ship",
+      "ship_equip": "ship_equip"
+    },
+    "CommonCV": {
+      "name": "ThreeOilLowCost.CommonCV.name",
+      "help": "ThreeOilLowCost.CommonCV.help",
+      "custom": "custom",
+      "any": "any",
+      "eagle": "eagle",
+      "langley": "langley",
+      "bogue": "bogue",
+      "ranger": "ranger",
+      "hermes": "hermes"
+    },
+    "CommonCVFilter": {
+      "name": "ThreeOilLowCost.CommonCVFilter.name",
+      "help": "ThreeOilLowCost.CommonCVFilter.help"
+    },
+    "ChangeVanguard": {
+      "name": "ThreeOilLowCost.ChangeVanguard.name",
+      "help": "ThreeOilLowCost.ChangeVanguard.help",
+      "disabled": "disabled",
+      "ship": "ship",
+      "ship_equip": "ship_equip"
+    },
+    "CommonDD": {
+      "name": "ThreeOilLowCost.CommonDD.name",
+      "help": "ThreeOilLowCost.CommonDD.help",
+      "custom": "custom",
+      "any": "any",
+      "favourite": "favourite",
+      "aulick_or_foote": "aulick_or_foote",
+      "cassin_or_downes": "cassin_or_downes",
+      "z20_or_z21": "z20_or_z21",
+      "DDG": "DDG"
+    },
+    "CommonDDFilter": {
+      "name": "ThreeOilLowCost.CommonDDFilter.name",
+      "help": "ThreeOilLowCost.CommonDDFilter.help"
+    },
+    "EquipmentCode": {
+      "name": "ThreeOilLowCost.EquipmentCode.name",
+      "help": "ThreeOilLowCost.EquipmentCode.help"
+    },
+    "ALLowHighFlagshipLevel": {
+      "name": "ThreeOilLowCost.ALLowHighFlagshipLevel.name",
+      "help": "ThreeOilLowCost.ALLowHighFlagshipLevel.help"
+    },
+    "ALLowLowVanguardLevel": {
+      "name": "ThreeOilLowCost.ALLowLowVanguardLevel.name",
+      "help": "ThreeOilLowCost.ALLowLowVanguardLevel.help"
+    },
+    "DelayTaskIFNoFlagship": {
+      "name": "ThreeOilLowCost.DelayTaskIFNoFlagship.name",
+      "help": "ThreeOilLowCost.DelayTaskIFNoFlagship.help"
+    },
+    "CommissionLimit": {
+      "name": "ThreeOilLowCost.CommissionLimit.name",
+      "help": "ThreeOilLowCost.CommissionLimit.help"
     }
   },
   "Storage": {

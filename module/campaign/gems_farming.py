@@ -1,5 +1,6 @@
 from module.base.decorator import cached_property
 from module.campaign.campaign_base import CampaignBase
+from module.campaign.assets import *
 from module.campaign.run import CampaignRun
 from module.combat.assets import BATTLE_PREPARATION
 from module.combat.emotion import Emotion
@@ -101,10 +102,11 @@ class GemsEquipmentHandler(EquipmentCodeHandler):
 
 
     def __init__(self, config, device=None, task=None):
+        command = config.task.command if config and hasattr(config, 'task') and config.task else 'GemsFarming'
         super().__init__(config=config,
                          device=device,
                          task=task,
-                         key="GemsFarming.GemsFarming.EquipmentCode",
+                         key=f"{command}.GemsFarming.EquipmentCode",
                          ships=['DD', 'bogue', 'hermes', 'langley', 'ranger'])
 
     def current_ship(self, skip_first_screenshot=True):
